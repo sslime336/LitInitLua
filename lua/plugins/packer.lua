@@ -19,19 +19,16 @@ return require('packer').startup(function()
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
-    -- 起始页
+    -- 模糊查找 telescope.nvim
     use {
-        "startup-nvim/startup.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-        config = function()
-            require "startup".setup()
-        end
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    -- star⭐ 更多的起始页仪表盘
+    -- 起始页仪表盘
     use { 'glepnir/dashboard-nvim' }
 
-    -- lsp lspconfig/installer
+    -- lsp
     use { 'neovim/nvim-lspconfig', 'williamboman/mason.nvim' }
     use { "williamboman/mason-lspconfig.nvim" }
 
@@ -58,4 +55,7 @@ return require('packer').startup(function()
 
     -- snippets
     use 'onsails/lspkind-nvim' -- lspkind
+
+    -- 代码高亮插件 nvim-treesitter，不止高亮
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 end)

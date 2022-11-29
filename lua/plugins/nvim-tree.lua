@@ -1,11 +1,22 @@
-require 'nvim-tree'.setup {
+require 'nvim-tree'.setup({
     -- 关闭文件时自动关闭
     auto_close = true,
-    -- 不显示 git 状态图标
-    git = {
-        enable = false
-    }
-}
+    sort_by = "case_sensitive",
+    view = {
+        adaptive_size = true,
+        mappings = {
+            list = {
+                { key = "u", action = "dir_up" },
+            },
+        },
+    },
+    renderer = {
+        group_empty = true,
+    },
+    filters = {
+        dotfiles = true,
+    },
+})
 
 --[[
     nvim-tree 用法

@@ -1,5 +1,3 @@
-local M = {}
-
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 local map = vim.keymap.set
@@ -51,6 +49,7 @@ map('n', '<Leader>', '<Plug>(easymotion-prefix)', { noremap = false })
 -- end
 
 
+local M = {}
 -- 代码补全相关
 M.cmp = function(cmp)
     return {
@@ -82,5 +81,4 @@ M.cmp = function(cmp)
         ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     }
 end
-
 return M

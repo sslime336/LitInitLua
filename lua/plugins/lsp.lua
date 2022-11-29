@@ -32,6 +32,18 @@ require('mason-lspconfig').setup({
     },
 })
 
+-- 启动 lsp
+require 'lspconfig'.gopls.setup {}
+require 'lspconfig'.clangd.setup {}
+require 'lspconfig'.cmake.setup {}
+require 'lspconfig'.dockerls.setup {}
+require 'lspconfig'.sumneko_lua.setup {}
+require 'lspconfig'.sqls.setup {}
+require 'lspconfig'.lemminx.setup {}
+require 'lspconfig'.rust_analyzer.setup {}
+require 'lspconfig'.nimls.setup {}
+require 'lspconfig'.pyright.setup {}
+
 -- 代码补全
 local lspkind = require('lspkind')
 local cmp = require 'cmp'
